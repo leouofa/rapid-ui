@@ -18,7 +18,6 @@ module Ui
 
     # builds out the component
     def build_component
-      build_ui
       build_dynamic
       build_class
       build_responsiveness
@@ -27,10 +26,6 @@ module Ui
       build_stimulus_props
     end
 
-    # builds out the ui class for the component
-    def build_ui
-      add_class 'ui' unless off?(:ui)
-    end
 
     # adds dynamic class to the component is the switch is set
     def build_dynamic
