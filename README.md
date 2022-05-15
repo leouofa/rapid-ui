@@ -12,19 +12,17 @@ RapidUI is a modern framework that addresses linguistic complexity of designing 
 - It's battle tested and has been used in production by [StoryPRO](https://www.storypro.io) for over a year.
  
 ### Installation
-Add this line to your application Gemfile:
+1. Add this line to your application Gemfile:
 
 ```ruby
     gem 'rapid_ui'
 ```
 
-run and `bundle install`.
+2. run and `bundle install`.
 
 
-Next copy the configuration files.
+3. Copy the initializer, render monkey-patch, and ui.yml
 
 ```bash
 rake rapid_ui:install
 ```
-
-
