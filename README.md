@@ -5,7 +5,7 @@ RapidUI is a modern Ruby framework that addresses linguistic complexity of desig
 ### Features
 - Clean and readable code reduces cognitive load and improves developer happiness.
 - CSS Framework agnostic. It can be configured to work with your existing CSS framework.
-- You can integrate it with [sass-jesus]() and forget about the CSS framework complexity all-together.
+- You can integrate it with [sass-jesus](https://github.com/realstorypro/sass-jesu) and forget about the CSS framework complexity all-together.
 
 ### History
 - Rapid UI is a spiritual successor to [GoodUI](https://github.com/realstorypro/good-ui), a UI meta-programming framework based on [SemanticUI](https://semantic-ui.com/).
