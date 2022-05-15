@@ -20,6 +20,9 @@ Add this line to your application Gemfile:
 
 run and `bundle install`.
 
+
+Next copy the configuration files.
+
 ```bash
 rake rapid_ui:install
 ```
