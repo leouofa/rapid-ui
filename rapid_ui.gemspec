@@ -28,6 +28,10 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "view_component"
+  spec.add_dependency "hashie"
+  spec.add_dependency 'byebug'
+
   # Uncomment to register a new dependency of your gem
 
   # For more information and examples about making a new gem, checkout our
