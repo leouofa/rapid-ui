@@ -1,0 +1,16 @@
+ui:
+  container:
+    tag: div
+    css_class: 'container'
+
+  grid:
+    tag: div
+    css_class: 'grid'
+
+  row:
+    tag: div
+    css_class: 'row'
+
+  column:
+    tag: div
+    css_class: 'column'
