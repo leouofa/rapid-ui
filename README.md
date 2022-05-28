@@ -1,4 +1,4 @@
-# RapidUI 🥷
+# Rapid UI 🥋
 RapidUI is a modern Ruby framework that addresses linguistic complexity of designing user interfaces.
 
 
