@@ -7,7 +7,7 @@ RapidUI is a modern Ruby framework that addresses linguistic complexity of desig
 - Unlike css classes, misspelled functions throw errors, drastically reducing the debug time.
 - CSS Framework agnostic. It can be configured to work with your existing CSS framework.
 
-### History
+### Background
 - Rapid UI is a successor to [GoodUI](https://github.com/realstorypro/good-ui), a UI meta-programming framework for [Fomantic-UI](https://fomantic-ui.com/).
 - It's battle tested and has been used in production by [StoryPRO](https://www.storypro.io) for over a year.
  
