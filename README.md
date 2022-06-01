@@ -48,6 +48,6 @@ the amount of boilerplate code.
         =r ux.h2 text: 'Left Column'
         
       =r ux.column computer: 8, tablet: 9, mobile: 16
-        =r ux.h1 text: 'Right Column
+        =r ux.h1 text: 'Right Column'
 ```
 
