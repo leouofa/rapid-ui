@@ -18,6 +18,7 @@ module Ui
 
     # builds out the component
     def build_component
+      build_ui
       build_dynamic
       build_class
       build_responsiveness
@@ -26,10 +27,15 @@ module Ui
       build_stimulus_props
     end
 
+    # removes the ui class if the switch is set to false
+    def build_ui
+      add_class 'ui' unless (@settings.key?(:ui) && @settings[:ui] == false)
+    end
 
-    # adds dynamic class to the component is the switch is set
+
+    # adds dynamic class to the component is the switch is set to true
     def build_dynamic
-      add_class 'dynamic' if on?(:dynamic)
+      add_class 'dynamic' if (@settings.key?(:dynamic) && @settings[:dynamic])
     end
 
     # builds out css class for the component
@@ -116,26 +122,12 @@ module Ui
       "#{number_in_words(@settings[device])} wide #{device}"
     end
 
-    # appds items to the data hash
+    # adds items to the data hash
     def add_data(name, value)
       # initialize data hash if one doesn't exist
       @settings[:data] = {} if @settings[:data].nil?
 
       @settings[:data][name] = value
-    end
-
-    # checks if the key is off
-    # - use syntax like @settings[key].on?
-    # - make sure the [method]? is metaprogrammed on method_missing to map to the key
-    def off?(key)
-      return true if @settings[key].equal? :off
-      false
-    end
-
-    # checks if the key is on
-    def on?(key)
-      return true if @settings[key].equal? :on
-      false
     end
   end
 end
