@@ -32,6 +32,7 @@ class WrapperComponent < ViewComponent::Base
     arguments[:action] = @component.action_attr
     arguments[:name] = @component.name_attr
     arguments[:value] = @component.value
+    arguments[:rel] = @component.rel
     arguments[:type] = @component.type
     arguments[:rows] = @component.rows
     arguments[:placeholder] = @component.placeholder

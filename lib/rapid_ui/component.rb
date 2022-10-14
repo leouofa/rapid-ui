@@ -1,13 +1,13 @@
 module Ui
   # responsible for the out building of the component
   class Component
-    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :rows, :style, :tag, :text, :title, :type, :url, :value
+    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :rows, :style, :tag, :text, :title, :type, :url, :value, :rel
 
     def initialize(settings)
       @settings = settings
       set_defaults
       build_component
-      transpose_settings %w[action_attr alt data id img method name_attr placeholder rows style tag text title type url value]
+      transpose_settings %w[action_attr alt data id img method name_attr placeholder rows style tag text title type url value rel]
     end
 
     # sets component defaults
