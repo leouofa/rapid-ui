@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WrapperComponent < ViewComponent::Base
-  def initialize(name, arguments)
+  def initialize(name, **arguments)
     defaults = Ui::Utilities.instance.defaults(component: name)
     settings = merge_defaults(defaults, arguments)
 

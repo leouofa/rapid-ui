@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'hashie'
 require "view_component"
 
 # require 'byebug'
