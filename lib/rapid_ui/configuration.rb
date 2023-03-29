@@ -25,7 +25,6 @@ module RapidUi
   def self.boot
     raise "No ui file provided!" if configuration.ui_file.nil?
 
-    configuration.ui_yml = YAML.load_file(configuration.ui_file)
-    configuration.ui_hash = Hashie::Mash.load(configuration.ui_file)
+    configuration.ui_hash = YAML.load_file(configuration.ui_file)
   end
 end
