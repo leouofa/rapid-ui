@@ -1,15 +1,15 @@
 module Ui
   # responsible for the out building of the component
   class Component
-    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :rows,
-                  :style, :tag, :text, :title, :type, :url, :value, :rel
+    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :params,
+                  :rows, :style, :tag, :text, :title, :type, :target, :url, :value, :rel, :step, :disabled
 
     def initialize(settings)
       @settings = settings
       set_defaults
       build_component
       transpose_settings %w[action_attr alt data id img method name_attr placeholder rows style tag text title type url
-                            value rel]
+                            value rel step disabled]
     end
 
     # sets component defaults
@@ -26,6 +26,7 @@ module Ui
       build_responsiveness
       build_name
       build_default_class
+      apply_stimulus_shortcuts
       build_stimulus_props
     end
 
@@ -44,7 +45,8 @@ module Ui
       add_class @settings[:class] if @settings.key?(:class)
     end
 
-    # builds out the reponsive css classes
+    # builds out the responsive css classes
+    # used by semantic-ui responsive classes
     def build_responsiveness
       add_class build_only if @settings.key?(:only)
       add_class build_size if @settings.key?(:size)
@@ -55,7 +57,7 @@ module Ui
       end
     end
 
-    # builds out the name for the compnent
+    # builds out the name for the component
     def build_name
       return unless @settings.key?(:name)
 
@@ -68,11 +70,19 @@ module Ui
       add_class @settings[:css_class] if @settings.key?(:css_class)
     end
 
+    def apply_stimulus_shortcuts
+      @settings[:controller] = @settings[:c] if @settings.key?(:c)
+      @settings[:action] = @settings[:a] if @settings.key?(:a)
+      @settings[:target] = @settings[:t] if @settings.key?(:t)
+      @settings[:params] = @settings[:p] if @settings.key?(:p)
+    end
+
     # builds out stimulus.js shortcuts
     def build_stimulus_props
       add_data :controller, @settings[:controller] if @settings.key?(:controller)
-      add_data :target, @settings[:target] if @settings.key?(:target)
       add_data :action, @settings[:action] if @settings.key?(:action)
+      add_target_data @settings[:target] if @settings.key?(:target)
+      add_params_data @settings[:params] if @settings.key?(:params)
     end
 
     private
@@ -129,6 +139,33 @@ module Ui
       @settings[:data] = {} if @settings[:data].nil?
 
       @settings[:data][name] = value
+    end
+
+    # goes through the target object and populates the data variables
+    def add_target_data(target_obj)
+      target_obj.keys.each do |target|
+        controller = target.to_s
+        target=  target_obj[target]
+
+        data_string = "#{controller}-target"
+        add_data(data_string, target)
+      end
+    end
+
+
+    # goes through the params object and populate the data variables
+    def add_params_data(params_obj)
+      params_obj.keys.each do |params_controller|
+        controller = params_controller.to_s
+
+        params = params_obj[params_controller]
+        params.keys.each do |param|
+          param_value = params[param]
+          data_string = "#{controller}-#{param}-param"
+
+          add_data(data_string, param_value)
+        end
+      end
     end
   end
 end

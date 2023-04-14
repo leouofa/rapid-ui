@@ -36,15 +36,17 @@ class WrapperComponent < ViewComponent::Base
     arguments[:type] = @component.type
     arguments[:rows] = @component.rows
     arguments[:placeholder] = @component.placeholder
+    arguments[:step] = @component.step
+    arguments[:disabled] = @component.disabled
     arguments
   end
 
-  # retreives the default name from a hash
+  # retrieves the default name from a hash
   def default_name(default)
     default[0].to_sym
   end
 
-  # retreives the default value from a hash
+  # retrieves the default value from a hash
   def default_value(default)
     default[1]
   end
