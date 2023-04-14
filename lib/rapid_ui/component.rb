@@ -1,7 +1,7 @@
 module Ui
   # responsible for the out building of the component
   class Component
-    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :params,
+    attr_accessor :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :params,
                   :rows, :style, :tag, :text, :title, :type, :target, :url, :value, :rel, :step, :disabled
 
     def initialize(settings)
@@ -75,6 +75,7 @@ module Ui
       @settings[:action] = @settings[:a] if @settings.key?(:a)
       @settings[:target] = @settings[:t] if @settings.key?(:t)
       @settings[:params] = @settings[:p] if @settings.key?(:p)
+      @settings[:values] = @settings[:v] if @settings.key?(:v)
     end
 
     # builds out stimulus.js shortcuts
@@ -83,6 +84,7 @@ module Ui
       add_data :action, @settings[:action] if @settings.key?(:action)
       add_target_data @settings[:target] if @settings.key?(:target)
       add_params_data @settings[:params] if @settings.key?(:params)
+      add_values_data @settings[:values] if @settings.key?(:values)
     end
 
     private
@@ -162,6 +164,21 @@ module Ui
         params.keys.each do |param|
           param_value = params[param]
           data_string = "#{controller}-#{param}-param"
+
+          add_data(data_string, param_value)
+        end
+      end
+    end
+
+    # goes through the values object and populate the data variables
+    def add_values_data(params_obj)
+      params_obj.keys.each do |params_controller|
+        controller = params_controller.to_s
+
+        params = params_obj[params_controller]
+        params.keys.each do |param|
+          param_value = params[param]
+          data_string = "#{controller}-#{param}-value"
 
           add_data(data_string, param_value)
         end
