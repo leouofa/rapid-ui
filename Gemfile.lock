@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rapid_ui (1.1.1)
+    rapid_ui (1.2.0)
       view_component
 
 GEM

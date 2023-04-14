@@ -6,7 +6,7 @@ module Ui
     include ViewComponent
 
     def initialize
-      RapidUi.configuration.ui_hash['ui'].each do |ui_element|
+      RapidUi.configuration.ui_hash["ui"].each do |ui_element|
         define_singleton_method ui_element[0].to_s do |args = {}|
           # for convenience we allow people to only pass a class string
           # it is the same as setting a class
