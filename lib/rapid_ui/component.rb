@@ -1,19 +1,21 @@
 module Ui
   # responsible for the out building of the component
   class Component
-    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :rows, :style, :tag, :text, :title, :type, :url, :value, :rel
+    attr_accessor :action, :action_attr, :alt, :css_class, :data, :id, :img, :method, :name_attr, :placeholder, :rows,
+                  :style, :tag, :text, :title, :type, :url, :value, :rel
 
     def initialize(settings)
       @settings = settings
       set_defaults
       build_component
-      transpose_settings %w[action_attr alt data id img method name_attr placeholder rows style tag text title type url value rel]
+      transpose_settings %w[action_attr alt data id img method name_attr placeholder rows style tag text title type url
+                            value rel]
     end
 
     # sets component defaults
     def set_defaults
       @data = nil
-      @css_class = ''
+      @css_class = ""
     end
 
     # builds out the component
@@ -29,13 +31,12 @@ module Ui
 
     # removes the ui class if the switch is set to false
     def build_ui
-      add_class 'ui' unless (@settings.key?(:ui) && @settings[:ui] == false)
+      add_class "ui" unless @settings.key?(:ui) && @settings[:ui] == false
     end
-
 
     # adds dynamic class to the component is the switch is set to true
     def build_dynamic
-      add_class 'dynamic' if (@settings.key?(:dynamic) && @settings[:dynamic])
+      add_class "dynamic" if @settings.key?(:dynamic) && @settings[:dynamic]
     end
 
     # builds out css class for the component

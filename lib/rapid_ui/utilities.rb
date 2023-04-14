@@ -9,7 +9,7 @@ module Ui
     end
 
     def defaults(component:)
-      @config['ui'][component.to_s]
+      @config["ui"][component.to_s]
     end
   end
 end
