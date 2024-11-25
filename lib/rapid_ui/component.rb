@@ -28,6 +28,7 @@ module Ui
       build_default_class
       apply_stimulus_shortcuts
       build_stimulus_props
+      trim_css_class
     end
 
     # removes the ui class if the switch is set to false
@@ -184,5 +185,10 @@ module Ui
         end
       end
     end
+
+    def trim_css_class
+      @css_class = @css_class.strip.empty? ? "" : @css_class.strip
+    end
+
   end
 end
