@@ -1,3 +1,5 @@
+[![Test](https://github.com/leouofa/rapid-ui/actions/workflows/test.yml/badge.svg)](https://github.com/leouofa/rapid-ui/actions/workflows/test.yml)
+
 # Rapid UI 🥋
 RapidUI is a modern Ruby framework that addresses linguistic complexity of designing user interfaces.
 
