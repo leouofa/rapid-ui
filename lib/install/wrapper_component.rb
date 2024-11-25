@@ -22,7 +22,7 @@ class WrapperComponent < ViewComponent::Base
 
   def tag_arguments
     arguments = {}
-    arguments[:class] = @component.css_class
+    arguments[:class] = @component.css_class unless @component.css_class.empty?
     arguments[:id] = @component.id
     arguments[:data] = @component.data
     arguments[:style] = @component.style
