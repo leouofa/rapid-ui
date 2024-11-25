@@ -9,8 +9,8 @@ RapidUI is a modern Ruby framework that addresses linguistic complexity of desig
 
 ### Background
 - Rapid UI is a successor to [GoodUI](https://github.com/realstorypro/good-ui), a UI meta-programming framework for [Fomantic-UI](https://fomantic-ui.com/).
-- It's battle tested and has been used in production by [StoryPRO](https://www.storypro.io) for over a year.
- 
+- It's battle tested and has been used in production by [StoryPRO](https://www.storypro.io) for many years.
+
 ### Installation
 1. Add this line to your application Gemfile:
 
@@ -38,16 +38,15 @@ the amount of boilerplate code.
 =r ux.container
 
   =r ux.grid
-  
+
     =r ux.row
       =r ux.column size: 16
           =r ux.h1 text: "Full Size"
-          
+
     =r ux.row
       =r ux.column computer: 8, tablet: 7, mobile: 16
         =r ux.h2 text: 'Left Column'
-        
+
       =r ux.column computer: 8, tablet: 9, mobile: 16
         =r ux.h1 text: 'Right Column'
 ```
-
