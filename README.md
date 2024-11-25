@@ -1,6 +1,8 @@
 # Rapid UI 🥋
 RapidUI is a modern Ruby framework that addresses linguistic complexity of designing user interfaces.
 
+[![Test](https://github.com/leouofa/rapid-ui/actions/workflows/test.yml/badge.svg)](https://github.com/leouofa/rapid-ui/actions/workflows/test.yml)
+
 
 ### Features
 - Clean and readable code reduces cognitive load and improves developer happiness.
