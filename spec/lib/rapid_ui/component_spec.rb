@@ -62,7 +62,7 @@ RSpec.describe Ui::Component do
 
     context 'with name option' do
       it 'adds name class and data attribute' do
-        component = described_class.new(name: 'TestComponent')
+        component = described_class.new(name: 'Test Component')
         expect(component.css_class).to include('Test Component')
         expect(component.data).to include(name: 'test_component')
       end

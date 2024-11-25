@@ -1,3 +1,4 @@
+require 'active_support/core_ext/string'
 require 'rapid_ui/component'
 require 'byebug'
 
