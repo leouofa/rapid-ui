@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Ruby on Rails UI development framework based on ViewComponent"
   spec.homepage = "https://github.com/leouofa/rapid-ui"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.3.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "view_component"
   spec.add_development_dependency "activesupport", ">= 7.0"
+  spec.add_development_dependency "byebug"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency 'byebug'
 
   # Uncomment to register a new dependency of your gem
 
