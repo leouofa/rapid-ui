@@ -23,9 +23,7 @@ jobs:
           bundler-cache: true # This will cache installed gems automatically
 
       - name: Install dependencies
-        run: |
-          bundle lock --add-platform x86_64-linux
-          bundle install
+        run: bundle install
 
       - name: Run tests
         run: bundle exec rspec
